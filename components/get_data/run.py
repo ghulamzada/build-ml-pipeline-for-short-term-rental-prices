@@ -15,7 +15,16 @@ logger = logging.getLogger()
 
 
 def go(args):
+    """
+    This function will download input data.
 
+    Args:
+        - sample: Name of sample data
+        - artifact_name: Name for the output artifact
+        - artifact_type: Name of csv file to be saved
+        - output_type: type of output artifact to be saved
+        - artifact_description: Description of output artifact
+    """
     run = wandb.init(job_type="download_file")
     run.config.update(args)
 
