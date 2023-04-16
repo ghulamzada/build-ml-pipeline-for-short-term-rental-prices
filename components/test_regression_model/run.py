@@ -8,6 +8,8 @@ import wandb
 import mlflow
 import pandas as pd
 from sklearn.metrics import mean_absolute_error
+import itertools
+
 
 from wandb_utils.log_artifact import log_artifact
 
@@ -17,7 +19,10 @@ logger = logging.getLogger()
 
 
 def go(args):
-
+    """
+    Testing the regression model:
+    This function tests the random forest regression model saved in W&B.
+    """
     run = wandb.init(job_type="test_model")
     run.config.update(args)
 
@@ -35,6 +40,7 @@ def go(args):
 
     logger.info("Loading model and performing inference on test set")
     sk_pipe = mlflow.sklearn.load_model(model_local_path)
+
     y_pred = sk_pipe.predict(X_test)
 
     logger.info("Scoring")

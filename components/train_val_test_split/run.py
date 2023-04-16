@@ -15,6 +15,17 @@ logger = logging.getLogger()
 
 
 def go(args):
+    """
+    Train test split function: This will split the dataframe into:
+        - Training set
+        - Test set
+
+    Args:
+        - input: Input dataset
+        - Test_size: Size to split the dataset intro training and testset
+        - random: Seed for the random number generator. Use this for reproducibility
+        - stratify: Column to use for stratification
+    """
 
     run = wandb.init(job_type="train_val_test_split")
     run.config.update(args)
@@ -24,8 +35,10 @@ def go(args):
     logger.info(f"Fetching artifact {args.input}")
     artifact_local_path = run.use_artifact(args.input).file()
 
+    # Loading dataset
     df = pd.read_csv(artifact_local_path)
 
+    # Splitting data into training set & test set
     logger.info("Splitting trainval and test")
     trainval, test = train_test_split(
         df,
