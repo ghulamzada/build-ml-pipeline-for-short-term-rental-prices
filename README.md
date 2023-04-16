@@ -404,7 +404,7 @@ which checks that the size of the dataset is reasonable (not too small, not too 
 
 Then, add another test ``test_price_range(data, min_price, max_price)`` that checks that 
 the price range is between ``min_price`` and ``max_price`` 
-(hint: you can use the ``data['price'].between(...)`` method). Also, remember that we are using closures, so the
+(hint: you can use the ``data['price'].between(...).all()`` method). Also, remember that we are using closures, so the
 name of the variables that your test takes in MUST BE exactly `data`, `min_price` and `max_price`.
 
 Now add the `data_check` component to the main file, so that it gets executed as part of our
