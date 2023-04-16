@@ -463,11 +463,11 @@ at the end of the `hydra_options` specification), and try setting the parameter 
 and 30, and the `modeling.random_forest.max_features` to 0.1, 0.33, 0.5, 0.75, 1.
 
 HINT: if you don't remember the hydra syntax, you can take inspiration from this is example, where we vary 
-two other parameters (this is NOT the solution to this step):
+two other parameters (**this is the solution to this step**):
 ```bash
 > mlflow run . \
   -P steps=train_random_forest \
-  -P hydra_options="modeling.random_forest.max_depth=10,50,100 modeling.random_forest.n_estimators=100,200,500 -m"
+  -P hydra_options="modeling.max_tfidf_features=10,15,30 modeling.random_forest.max_features=0.1,0.33,0.5,0.75,1 -m"
 ```
 you can change this command line to accomplish your task.
 
