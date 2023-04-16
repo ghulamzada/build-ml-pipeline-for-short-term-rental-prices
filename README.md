@@ -250,12 +250,12 @@ notebook can be understood by other people like your colleagues
     Note that we use ``save_code=True`` in the call to ``wandb.init`` so the notebook is uploaded and versioned
     by W&B.
 
-4. Using `pandas-profiling`, create a profile:
+4. Using `ydata_profiling`, create a profile:
    ```python
-   import pandas_profiling
+   import ydata_profiling
    
    profile = pandas_profiling.ProfileReport(df)
-   profile.to_widgets()
+   profile.to_notebook_iframe()
    ```
    what do you notice? Look around and see what you can find. 
    
