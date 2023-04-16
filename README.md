@@ -1,4 +1,4 @@
-# My Submition Details:
+# My Submission Details:
    - W&B Project Link: https://wandb.ai/ghulamzada/nyc_airbnb/overview?workspace=user-tajmohammad20
    - GitHub Project Link: https://github.com/ghulamzada/build-ml-pipeline-for-short-term-rental-prices.git
 
