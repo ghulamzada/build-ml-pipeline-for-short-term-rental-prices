@@ -34,7 +34,6 @@ def test_column_names(data):
 
 
 def test_neighborhood_names(data):
-
     """
     This test checks if the unique calues in column "neighbourhood_group".
     """
@@ -51,12 +50,16 @@ def test_proper_boundaries(data: pd.DataFrame):
     """
     Test proper longitude and latitude boundaries for properties in and around NYC
     """
-    idx = data['longitude'].between(-74.25, -73.50) & data['latitude'].between(40.5, 41.2)
+    idx = data['longitude'].between(-74.25, - \
+                                    73.50) & data['latitude'].between(40.5, 41.2)
 
     assert np.sum(~idx) == 0
 
 
-def test_similar_neigh_distrib(data: pd.DataFrame, ref_data: pd.DataFrame, kl_threshold: float):
+def test_similar_neigh_distrib(
+        data: pd.DataFrame,
+        ref_data: pd.DataFrame,
+        kl_threshold: float):
     """
     Apply a threshold on the KL divergence to detect if the distribution of the new data is
     significantly different than that of the reference dataset
@@ -78,4 +81,4 @@ def test_price_range(data, min_price, max_price):
     """
     Test price range to be between minimum and maximum values.
     """
-    assert  data['price'].between(min_price, max_price).all()
+    assert data['price'].between(min_price, max_price).all()

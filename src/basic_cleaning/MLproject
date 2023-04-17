@@ -6,28 +6,28 @@ entry_points:
     parameters:
 
       input_artifact:
-        description: The input artifact (svaed in W&B) ## ADD DESCRIPTION
+        description: The input artifact (svaed in W&B)
         type: string
 
       output_artifact:
-        description: The name for the output artifact ## INSERT DESCRIPTION HERE, ## ADD DESCRIPTION
+        description: The name for the output artifact 
         type: string
 
       output_type: 
-        description: The type for the output artifact ## ADD DESCRIPTION
+        description: The type for the output artifact
         type: string
 
       output_description:
-        description: A description for the output artifact ## ADD DESCRIPTION
+        description: A description for the output artifact 
         type: string
 
       min_price:
-        description: The minimum price to consider ## ADD DESCRIPTION
-        type: string
+        description: The minimum price to consider 
+        type: float
 
       max_price:
-        description: The maximum price to consider ## ADD DESCRIPTION
-        type: string
+        description: The maximum price to consider
+        type: float
 
 
     command: >-
